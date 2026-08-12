@@ -3,45 +3,258 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>IEFA DIGITAL | Tecnología e Informática</title>
+
 <style>
-:root{--rosa:#f83ab0;--azul:#2f63e8;--morado:#8b4de8;--amarillo:#fff200;--negro:#080808;--blanco:#fff;--borde:#2c7fe8}
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:"Trebuchet MS",Arial,sans-serif;background:var(--rosa);color:var(--negro);min-height:100vh}
-.page{max-width:1200px;margin:auto;border-left:3px solid var(--borde);border-right:3px solid var(--borde);background:var(--rosa)}
-header{min-height:610px;padding:55px 6% 45px;display:grid;grid-template-columns:1.1fr .9fr;gap:30px;align-items:center;border-top:3px solid var(--borde);border-bottom:3px solid var(--borde)}
-.intro{text-align:center}.title{font-family:Impact,"Arial Black",sans-serif;font-size:clamp(42px,6vw,72px);letter-spacing:1px;margin-bottom:12px}
-.subtitle{font-family:Impact,"Arial Black",sans-serif;font-size:clamp(25px,3.4vw,43px);line-height:1.05;margin-bottom:42px}
-.teachers{font-size:25px;line-height:1.2;font-weight:900;margin-bottom:45px}.description{font-size:25px;line-height:1.12;font-weight:900}
-.logo-wrap{display:flex;justify-content:center;align-items:center}.logo{width:min(350px,90%);filter:drop-shadow(0 8px 0 rgba(0,0,0,.08))}
-.projects{padding:65px 6% 90px;border-bottom:3px solid var(--borde)}.section-title{color:var(--amarillo);font-family:Impact,"Arial Black",sans-serif;font-size:clamp(40px,5vw,64px);margin-bottom:40px}
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;align-items:start}.card{background:#fff;border-radius:30px;padding:28px 22px 24px;min-height:320px;text-align:center;box-shadow:0 8px 0 rgba(0,0,0,.05);transition:.2s}
-.card:hover{transform:translateY(-6px)}.card-icon{height:120px;display:flex;justify-content:center;align-items:center;font-size:78px;margin-bottom:10px}
-.card h2{font-family:"Arial Black",Arial,sans-serif;font-size:30px;line-height:1.05}.scratch h2,.appinventor h2{color:var(--azul)}.makecode h2{color:var(--morado)}
-.grade{font-size:28px;font-weight:900;margin:10px 0 20px}.button{display:inline-block;border:0;border-radius:999px;padding:13px 24px;font-weight:900;font-size:17px;cursor:pointer;background:var(--negro);color:#fff}.button:hover{opacity:.85}
-.demo{display:none;margin-top:45px;background:#fff;border-radius:30px;padding:30px}.demo.active{display:block}.demo h2{font-family:"Arial Black",Arial,sans-serif;font-size:32px;margin-bottom:8px}.demo p{font-size:18px;font-weight:700;margin-bottom:20px}
-.game-frame {
-  width: 100%;
-  max-width: 850px;
-  margin: 0 auto;
-  position: relative;
-  height: 0;
-  padding-bottom: 117.6%;
-  overflow: hidden;
-  border-radius: 20px;
-  border: 4px solid var(--morado);
-  background: #111;
+
+:root{
+  --rosa:#f83ab0;
+  --azul:#2f63e8;
+  --morado:#8b4de8;
+  --amarillo:#fff200;
+  --negro:#080808;
+  --blanco:#fff;
+  --borde:#2c7fe8;
 }
 
-.game-frame iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: 0;
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
 }
-.evaluation{margin:30px auto 0;max-width:850px;background:#f5f5f5;border-radius:24px;padding:28px}.evaluation h3{font-size:27px;margin-bottom:8px}.note{font-size:16px;margin-bottom:18px;font-weight:700}
+
+body{
+  font-family:"Trebuchet MS",Arial,sans-serif;
+  background:var(--rosa);
+  color:var(--negro);
+  min-height:100vh;
+}
+
+.page{
+  max-width:1200px;
+  margin:auto;
+  border-left:3px solid var(--borde);
+  border-right:3px solid var(--borde);
+  background:var(--rosa);
+}
+
+/* =========================
+   ENCABEZADO
+========================= */
+
+header{
+  min-height:610px;
+  padding:55px 6% 45px;
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:30px;
+  align-items:center;
+  border-top:3px solid var(--borde);
+  border-bottom:3px solid var(--borde);
+}
+
+.intro{
+  text-align:center;
+}
+
+.title{
+  font-family:Impact,"Arial Black",sans-serif;
+  font-size:clamp(42px,6vw,72px);
+  letter-spacing:1px;
+  margin-bottom:12px;
+}
+
+.subtitle{
+  font-family:Impact,"Arial Black",sans-serif;
+  font-size:clamp(25px,3.4vw,43px);
+  line-height:1.05;
+  margin-bottom:42px;
+}
+
+.teachers{
+  font-size:25px;
+  line-height:1.2;
+  font-weight:900;
+  margin-bottom:45px;
+}
+
+.description{
+  font-size:25px;
+  line-height:1.12;
+  font-weight:900;
+}
+
+.logo-wrap{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.logo{
+  width:min(350px,90%);
+  filter:drop-shadow(0 8px 0 rgba(0,0,0,.08));
+}
+
+/* =========================
+   PROYECTOS
+========================= */
+
+.projects{
+  padding:65px 6% 90px;
+  border-bottom:3px solid var(--borde);
+}
+
+.section-title{
+  color:var(--amarillo);
+  font-family:Impact,"Arial Black",sans-serif;
+  font-size:clamp(40px,5vw,64px);
+  margin-bottom:40px;
+}
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:22px;
+  align-items:start;
+}
+
+.card{
+  background:#fff;
+  border-radius:30px;
+  padding:28px 22px 24px;
+  min-height:320px;
+  text-align:center;
+  box-shadow:0 8px 0 rgba(0,0,0,.05);
+  transition:.2s;
+}
+
+.card:hover{
+  transform:translateY(-6px);
+}
+
+.card-icon{
+  height:120px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-size:78px;
+  margin-bottom:10px;
+}
+
+.card h2{
+  font-family:"Arial Black",Arial,sans-serif;
+  font-size:30px;
+  line-height:1.05;
+}
+
+.scratch h2,
+.appinventor h2{
+  color:var(--azul);
+}
+
+.makecode h2{
+  color:var(--morado);
+}
+
+.grade{
+  font-size:28px;
+  font-weight:900;
+  margin:10px 0 20px;
+}
+
+.button{
+  display:inline-block;
+  border:0;
+  border-radius:999px;
+  padding:13px 24px;
+  font-weight:900;
+  font-size:17px;
+  cursor:pointer;
+  background:var(--negro);
+  color:#fff;
+  text-decoration:none;
+}
+
+.button:hover{
+  opacity:.85;
+}
+
+/* =========================
+   JUEGOS
+========================= */
+
+.demo{
+  display:none;
+  margin-top:45px;
+  background:#fff;
+  border-radius:30px;
+  padding:30px;
+}
+
+.demo.active{
+  display:block;
+}
+
+.demo h2{
+  font-family:"Arial Black",Arial,sans-serif;
+  font-size:32px;
+  margin-bottom:8px;
+}
+
+.demo p{
+  font-size:18px;
+  font-weight:700;
+  margin-bottom:20px;
+}
+
+/* Contenedor del simulador */
+
+.game-frame{
+  width:100%;
+  max-width:850px;
+  margin:0 auto;
+  position:relative;
+  height:0;
+  padding-bottom:117.6%;
+  overflow:hidden;
+  border-radius:20px;
+  border:4px solid var(--morado);
+  background:#111;
+}
+
+.game-frame iframe{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  border:0;
+}
+
+/* =========================
+   EVALUACIÓN
+========================= */
+
+.evaluation{
+  margin:30px auto 0;
+  max-width:850px;
+  background:#f5f5f5;
+  border-radius:24px;
+  padding:28px;
+}
+
+.evaluation h3{
+  font-size:27px;
+  margin-bottom:8px;
+}
+
+.note{
+  font-size:16px;
+  margin-bottom:18px;
+  font-weight:700;
+}
+
 .form-frame{
   width:100%;
   max-width:850px;
@@ -53,133 +266,417 @@ header{min-height:610px;padding:55px 6% 45px;display:grid;grid-template-columns:
 
 .form-frame iframe{
   width:100%;
+  height:900px;
   min-height:900px;
   border:0;
-}  
-.criterion{margin:20px 0}.criterion label.title-label{display:block;font-size:18px;font-weight:900;margin-bottom:10px}.stars{display:flex;gap:8px;flex-wrap:wrap}.stars input{display:none}
-.stars label{width:46px;height:42px;display:flex;align-items:center;justify-content:center;border:2px solid #bbb;border-radius:12px;background:#fff;cursor:pointer;font-weight:900;font-size:18px}
-.stars label:hover,.stars input:checked+label{background:var(--amarillo);border-color:#222}
-textarea{width:100%;min-height:100px;border:2px solid #bbb;border-radius:14px;padding:12px;font:inherit;resize:vertical}.submit{margin-top:18px;background:var(--morado)}
-.message{display:none;margin-top:18px;padding:15px;border-radius:14px;background:#dff7df;font-weight:900}footer{text-align:center;padding:35px 20px;font-weight:900;font-size:17px}
-@media(max-width:850px){header{grid-template-columns:1fr;min-height:auto;padding-top:45px}.cards{grid-template-columns:1fr}.card{max-width:430px;margin:auto;width:100%}.game-frame{min-height:500px}}
-@media(max-width:500px){.title{font-size:45px}.subtitle{font-size:28px}.teachers,.description{font-size:20px}.projects{padding-left:5%;padding-right:5%}.game-frame{height:620px;min-height:0}}
+}
+
+/* Separación entre juegos */
+
+.game-separator{
+  height:35px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+  text-align:center;
+  padding:35px 20px;
+  font-weight:900;
+  font-size:17px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:850px){
+
+  header{
+    grid-template-columns:1fr;
+    min-height:auto;
+    padding-top:45px;
+  }
+
+  .cards{
+    grid-template-columns:1fr;
+  }
+
+  .card{
+    max-width:430px;
+    margin:auto;
+    width:100%;
+  }
+
+  .game-frame{
+    padding-bottom:117.6%;
+  }
+
+}
+
+@media(max-width:500px){
+
+  .title{
+    font-size:45px;
+  }
+
+  .subtitle{
+    font-size:28px;
+  }
+
+  .teachers,
+  .description{
+    font-size:20px;
+  }
+
+  .projects{
+    padding-left:5%;
+    padding-right:5%;
+  }
+
+  .game-frame{
+    padding-bottom:117.6%;
+  }
+
+}
+
 </style>
 </head>
+
+
 <body>
+
 <div class="page">
+
+<!-- =========================
+     ENCABEZADO
+========================= -->
+
 <header>
+
 <section class="intro">
-<h1 class="title">IEFA DIGITAL</h1>
-<h2 class="subtitle">Muestra de proyectos de Tecnología e Informática</h2>
-<div class="teachers">Docentes:<br>Jairo Villamizar<br>Sebastian Pedroza</div>
-<p class="description">IEFA DIGITAL es una muestra de proyectos de Tecnología e Informática que reúne aplicaciones, juegos y creaciones digitales desarrolladas por nuestros estudiantes. 🚀 💻</p>
+
+<h1 class="title">
+IEFA DIGITAL
+</h1>
+
+<h2 class="subtitle">
+Muestra de proyectos de Tecnología e Informática
+</h2>
+
+<div class="teachers">
+Docentes:<br>
+Jairo Villamizar<br>
+Sebastian Pedroza
+</div>
+
+<p class="description">
+IEFA DIGITAL es una muestra de proyectos de Tecnología e Informática que reúne aplicaciones, juegos y creaciones digitales desarrolladas por nuestros estudiantes. 🚀 💻
+</p>
+
 </section>
-<div class="logo-wrap"><img class="logo" src="logo-fe-y-alegria.png" alt="Logo Fe y Alegría"></div>
+
+
+<div class="logo-wrap">
+
+<img
+class="logo"
+src="logo-fe-y-alegria.png"
+alt="Logo Fe y Alegría">
+
+</div>
+
 </header>
 
+
+<!-- =========================
+     PROYECTOS
+========================= -->
+
 <main class="projects">
-<div class="section-title">IEFA</div>
+
+<div class="section-title">
+IEFA
+</div>
+
+
 <section class="cards">
-<article class="card scratch"><div class="card-icon">🐱</div><h2>JUEGOS<br>SCRATCH</h2><div class="grade">GRADO 8</div>
-<button class="button" onclick="alert('Aquí agregaremos los juegos de Scratch.')">EXPLORAR</button></article>
 
-<article class="card makecode">
-  <div class="card-icon">🕹️</div>
 
-  <h2>JUEGO<br>MAKECODE</h2>
+<!-- SCRATCH -->
 
-  <div class="grade">GRADO 9</div>
+<article class="card scratch">
 
-  <button class="button" onclick="mostrarJuego()">
-    JUGAR
-  </button>
+<div class="card-icon">
+🐱
+</div>
+
+<h2>
+JUEGOS<br>
+SCRATCH
+</h2>
+
+<div class="grade">
+GRADO 8
+</div>
+
+<button
+class="button"
+onclick="alert('Aquí agregaremos los juegos de Scratch.')">
+
+EXPLORAR
+
+</button>
+
 </article>
 
-<article class="card appinventor"><div class="card-icon">📱</div><h2>APP<br>INVENTOR</h2><div class="grade">GRADO 11</div>
-<button class="button" onclick="alert('Aquí agregaremos las aplicaciones de App Inventor y sus APK.')">EXPLORAR</button></article>
-</section>
 
-<section id="hunter-cat" class="demo">
-<h2>🕹️ HUNTER CAT — Grado 9</h2>
-<p>Juega directamente en esta página. Cuando termines, baja a la sección de evaluación.</p>
-<div class="game-frame">
-  <iframe
-    src="https://arcade.makecode.com/---run?id=_JdDE5AK4rW3b&fullscreen=1&autofocus=1"
-    allowfullscreen="allowfullscreen"
-    sandbox="allow-popups allow-forms allow-scripts allow-same-origin"
-    frameborder="0"
-    title="Juego MakeCode Arcade">
-  </iframe>
+<!-- MAKECODE -->
+
+<article class="card makecode">
+
+<div class="card-icon">
+🕹️
 </div>
 
+<h2>
+JUEGOS<br>
+MAKECODE
+</h2>
+
+<div class="grade">
+GRADO 9
+</div>
+
+<button
+class="button"
+onclick="mostrarMakecode()">
+
+JUGAR
+
+</button>
+
+</article>
+
+
+<!-- APP INVENTOR -->
+
+<article class="card appinventor">
+
+<div class="card-icon">
+📱
+</div>
+
+<h2>
+APP<br>
+INVENTOR
+</h2>
+
+<div class="grade">
+GRADO 11
+</div>
+
+<button
+class="button"
+onclick="alert('Aquí agregaremos las aplicaciones de App Inventor y sus APK.')">
+
+EXPLORAR
+
+</button>
+
+</article>
+
+
+</section>
+
+
+<!-- =====================================================
+     HUNTER CAT
+===================================================== -->
+
+<section
+id="hunter-cat"
+class="demo">
+
+
+<h2>
+🕹️ HUNTER CAT — Grado 9
+</h2>
+
+<p>
+Juega directamente en esta página. Cuando termines, baja a la sección de evaluación.
+</p>
+
+
+<!-- JUEGO -->
+
+<div class="game-frame">
+
+<iframe
+src="https://arcade.makecode.com/---run?id=_JdDE5AK4rW3b&fullscreen=1&autofocus=1"
+allowfullscreen="allowfullscreen"
+sandbox="allow-popups allow-forms allow-scripts allow-same-origin"
+frameborder="0"
+title="Hunter Cat">
+</iframe>
+
+</div>
+
+
+<!-- EVALUACIÓN -->
 
 <div class="evaluation">
-  <h3>⭐ Evalúa HUNTER CAT</h3>
 
-  <p class="note">
-    Después de jugar, responde la evaluación directamente aquí.
-  </p>
+<h3>
+⭐ Evalúa HUNTER CAT
+</h3>
 
-  <div class="form-frame">
-    <iframe
-      src="https://docs.google.com/forms/d/e/1FAIpQLSdcYRBUKk5JpLI_CEoE6rh955nlxQjmMdZxofwmasn6kn_woQ/viewform?usp=pp_url&entry.366340186=9&entry.1373954358=HUNTER+CAT"
-      width="100%"
-      height="900"
-      frameborder="0"
-      marginheight="0"
-      marginwidth="0">
-      Cargando…
-    </iframe>
-  </div>
+<p class="note">
+Después de jugar, responde la evaluación directamente aquí.
+</p>
+
+
+<div class="form-frame">
+
+<iframe
+src="https://docs.google.com/forms/d/e/1FAIpQLSdcYRBUKk5JpLI_CEoE6rh955nlxQjmMdZxofwmasn6kn_woQ/viewform?usp=pp_url&entry.366340186=9&entry.1373954358=HUNTER+CAT"
+width="100%"
+height="900"
+frameborder="0"
+marginheight="0"
+marginwidth="0">
+
+Cargando…
+
+</iframe>
+
 </div>
-  <section id="caza-zanahorias" class="demo">
-  <h2>🥕 Caza Zanahorias — Grado 9</h2>
 
-  <p>
-    Juega directamente en esta página. Cuando termines, baja a la sección de evaluación.
-  </p>
+</div>
 
-  <div class="game-frame">
-    <iframe
-      src="https://arcade.makecode.com/---run?id=_E6Udaag21i7a&fullscreen=1&autofocus=1"
-      allowfullscreen="allowfullscreen"
-      sandbox="allow-popups allow-forms allow-scripts allow-same-origin"
-      frameborder="0"
-      title="Caza Zanahorias">
-    </iframe>
-  </div>
-
-  <div class="evaluation">
-    <h3>⭐ Evalúa Caza Zanahorias</h3>
-
-    <p class="note">
-      Después de jugar, responde la evaluación directamente aquí.
-    </p>
-
-    <div class="form-frame">
-      <iframe
-        src="https://docs.google.com/forms/d/e/1FAIpQLSdcYRBUKk5JpLI_CEoE6rh955nlxQjmMdZxofwmasn6kn_woQ/viewform?usp=pp_url&entry.366340186=9&entry.1373954358=CAZA+ZANAHORIAS"
-        width="100%"
-        height="900"
-        frameborder="0"
-        marginheight="0"
-        marginwidth="0">
-        Cargando…
-      </iframe>
-    </div>
-  </div>
 </section>
-  
-</main>
-<footer>IEFA DIGITAL · Tecnología e Informática · 2026</footer>
+
+
+<!-- =====================================================
+     SEPARADOR
+===================================================== -->
+
+<div class="game-separator"></div>
+
+
+<!-- =====================================================
+     CAZA ZANAHORIAS
+===================================================== -->
+
+<section
+id="caza-zanahorias"
+class="demo">
+
+
+<h2>
+🥕 CAZA ZANAHORIAS — Grado 9
+</h2>
+
+<p>
+Juega directamente en esta página. Cuando termines, baja a la sección de evaluación.
+</p>
+
+
+<!-- JUEGO -->
+
+<div class="game-frame">
+
+<iframe
+src="https://arcade.makecode.com/---run?id=_E6Udaag21i7a&fullscreen=1&autofocus=1"
+allowfullscreen="allowfullscreen"
+sandbox="allow-popups allow-forms allow-scripts allow-same-origin"
+frameborder="0"
+title="Caza Zanahorias">
+</iframe>
+
 </div>
+
+
+<!-- EVALUACIÓN -->
+
+<div class="evaluation">
+
+<h3>
+⭐ Evalúa CAZA ZANAHORIAS
+</h3>
+
+<p class="note">
+Después de jugar, responde la evaluación directamente aquí.
+</p>
+
+
+<div class="form-frame">
+
+<iframe
+src="https://docs.google.com/forms/d/e/1FAIpQLSdcYRBUKk5JpLI_CEoE6rh955nlxQjmMdZxofwmasn6kn_woQ/viewform?usp=pp_url&entry.366340186=9&entry.1373954358=CAZA+ZANAHORIAS"
+width="100%"
+height="900"
+frameborder="0"
+marginheight="0"
+marginwidth="0">
+
+Cargando…
+
+</iframe>
+
+</div>
+
+</div>
+
+</section>
+
+
+</main>
+
+
+<!-- =========================
+     PIE DE PÁGINA
+========================= -->
+
+<footer>
+
+IEFA DIGITAL · Tecnología e Informática · 2026
+
+</footer>
+
+
+</div>
+
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
 <script>
-function mostrarJuego(){const d=document.getElementById("demo");d.classList.add("active");d.scrollIntoView({behavior:"smooth",block:"start"});}
-document.getElementById("evaluationForm").addEventListener("submit",function(e){
-e.preventDefault();
-for(const n of ["funcionamiento","creatividad","usabilidad","experiencia"]){if(!document.querySelector('input[name="'+n+'"]:checked')){alert("Por favor completa todos los criterios antes de enviar.");return;}}
-document.getElementById("message").style.display="block";this.querySelector(".submit").disabled=true;this.querySelector(".submit").textContent="EVALUACIÓN ENVIADA";
-});
+
+function mostrarMakecode(){
+
+  const hunter = document.getElementById("hunter-cat");
+
+  const zanahorias = document.getElementById("caza-zanahorias");
+
+
+  hunter.classList.add("active");
+
+  zanahorias.classList.add("active");
+
+
+  hunter.scrollIntoView({
+    behavior:"smooth",
+    block:"start"
+  });
+
+}
+
 </script>
+
+
 </body>
 </html>
