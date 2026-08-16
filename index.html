@@ -8,15 +8,25 @@
 
 <style>
 
+/* =====================================================
+   COLORES IEFA
+===================================================== */
+
 :root{
-  --rosa:#f83ab0;
-  --azul:#2f63e8;
-  --morado:#8b4de8;
-  --amarillo:#fff200;
+  --azul:#123B70;
+  --azul-claro:#1E5AA8;
+  --morado:#6B4BC3;
+  --amarillo:#FFD500;
   --negro:#080808;
-  --blanco:#fff;
-  --borde:#2c7fe8;
+  --blanco:#ffffff;
+  --gris:#f4f4f4;
+  --borde:#FFD500;
 }
+
+
+/* =====================================================
+   GENERAL
+===================================================== */
 
 *{
   box-sizing:border-box;
@@ -24,9 +34,13 @@
   padding:0;
 }
 
+html{
+  scroll-behavior:smooth;
+}
+
 body{
   font-family:"Trebuchet MS",Arial,sans-serif;
-  background:var(--rosa);
+  background:var(--azul);
   color:var(--negro);
   min-height:100vh;
 }
@@ -34,24 +48,28 @@ body{
 .page{
   max-width:1200px;
   margin:auto;
-  border-left:3px solid var(--borde);
-  border-right:3px solid var(--borde);
-  background:var(--rosa);
+  background:var(--azul);
+  border-left:3px solid var(--amarillo);
+  border-right:3px solid var(--amarillo);
 }
 
-/* =========================
+
+/* =====================================================
    ENCABEZADO
-========================= */
+===================================================== */
 
 header{
   min-height:610px;
   padding:55px 6% 45px;
+
   display:grid;
   grid-template-columns:1.1fr .9fr;
+
   gap:30px;
   align-items:center;
-  border-top:3px solid var(--borde);
-  border-bottom:3px solid var(--borde);
+
+  border-top:3px solid var(--amarillo);
+  border-bottom:3px solid var(--amarillo);
 }
 
 .intro{
@@ -63,6 +81,7 @@ header{
   font-size:clamp(42px,6vw,72px);
   letter-spacing:1px;
   margin-bottom:12px;
+  color:var(--amarillo);
 }
 
 .subtitle{
@@ -70,6 +89,7 @@ header{
   font-size:clamp(25px,3.4vw,43px);
   line-height:1.05;
   margin-bottom:42px;
+  color:var(--blanco);
 }
 
 .teachers{
@@ -77,12 +97,14 @@ header{
   line-height:1.2;
   font-weight:900;
   margin-bottom:45px;
+  color:var(--blanco);
 }
 
 .description{
   font-size:25px;
   line-height:1.12;
   font-weight:900;
+  color:var(--blanco);
 }
 
 .logo-wrap{
@@ -93,16 +115,17 @@ header{
 
 .logo{
   width:min(350px,90%);
-  filter:drop-shadow(0 8px 0 rgba(0,0,0,.08));
+  filter:drop-shadow(0 8px 0 rgba(0,0,0,.15));
 }
 
-/* =========================
+
+/* =====================================================
    PROYECTOS
-========================= */
+===================================================== */
 
 .projects{
   padding:65px 6% 90px;
-  border-bottom:3px solid var(--borde);
+  border-bottom:3px solid var(--amarillo);
 }
 
 .section-title{
@@ -120,12 +143,14 @@ header{
 }
 
 .card{
-  background:#fff;
+  background:var(--blanco);
   border-radius:30px;
   padding:28px 22px 24px;
   min-height:320px;
   text-align:center;
-  box-shadow:0 8px 0 rgba(0,0,0,.05);
+
+  box-shadow:0 8px 0 rgba(0,0,0,.18);
+
   transition:.2s;
 }
 
@@ -135,10 +160,13 @@ header{
 
 .card-icon{
   height:120px;
+
   display:flex;
   justify-content:center;
   align-items:center;
+
   font-size:78px;
+
   margin-bottom:10px;
 }
 
@@ -150,7 +178,7 @@ header{
 
 .scratch h2,
 .appinventor h2{
-  color:var(--azul);
+  color:var(--azul-claro);
 }
 
 .makecode h2{
@@ -163,16 +191,27 @@ header{
   margin:10px 0 20px;
 }
 
+
+/* =====================================================
+   BOTONES
+===================================================== */
+
 .button{
   display:inline-block;
+
   border:0;
   border-radius:999px;
+
   padding:13px 24px;
+
   font-weight:900;
   font-size:17px;
+
   cursor:pointer;
+
   background:var(--negro);
-  color:#fff;
+  color:var(--blanco);
+
   text-decoration:none;
 }
 
@@ -180,15 +219,124 @@ header{
   opacity:.85;
 }
 
-/* =========================
-   JUEGOS
-========================= */
+
+/* =====================================================
+   MENÚ DE MAKECODE
+===================================================== */
+
+.game-menu{
+  position:relative;
+  margin-top:15px;
+}
+
+.game-menu-title{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  gap:8px;
+
+  background:var(--negro);
+  color:var(--blanco);
+
+  border-radius:999px;
+
+  padding:13px 20px;
+
+  font-weight:900;
+  font-size:17px;
+
+  cursor:pointer;
+}
+
+.game-menu-title span{
+  font-size:13px;
+}
+
+
+/* Lista de juegos */
+
+.game-options{
+  position:absolute;
+
+  left:0;
+  right:0;
+
+  top:100%;
+
+  margin-top:8px;
+
+  background:var(--blanco);
+
+  border-radius:18px;
+
+  padding:8px;
+
+  box-shadow:0 10px 25px rgba(0,0,0,.25);
+
+  opacity:0;
+  visibility:hidden;
+
+  transform:translateY(-8px);
+
+  transition:.2s;
+
+  z-index:100;
+}
+
+
+/* Mostrar al pasar el mouse */
+
+.game-menu:hover .game-options{
+  opacity:1;
+  visibility:visible;
+
+  transform:translateY(0);
+}
+
+
+/* Botones de cada juego */
+
+.game-options button{
+  width:100%;
+
+  border:0;
+
+  background:var(--blanco);
+
+  padding:13px 10px;
+
+  border-radius:12px;
+
+  font-weight:900;
+
+  font-size:16px;
+
+  cursor:pointer;
+
+  text-align:left;
+
+  transition:.2s;
+}
+
+.game-options button:hover{
+  background:var(--amarillo);
+}
+
+
+/* =====================================================
+   SECCIÓN DE JUEGOS
+===================================================== */
 
 .demo{
   display:none;
+
   margin-top:45px;
-  background:#fff;
+
+  background:var(--blanco);
+
   border-radius:30px;
+
   padding:30px;
 }
 
@@ -198,105 +346,156 @@ header{
 
 .demo h2{
   font-family:"Arial Black",Arial,sans-serif;
+
   font-size:32px;
+
   margin-bottom:8px;
+
+  color:var(--azul);
 }
 
 .demo p{
   font-size:18px;
+
   font-weight:700;
+
   margin-bottom:20px;
 }
 
-/* Contenedor del simulador */
+
+/* =====================================================
+   MARCO DEL JUEGO
+===================================================== */
 
 .game-frame{
   width:100%;
+
   max-width:850px;
+
   margin:0 auto;
+
   position:relative;
+
   height:0;
+
   padding-bottom:117.6%;
+
   overflow:hidden;
+
   border-radius:20px;
+
   border:4px solid var(--morado);
+
   background:#111;
 }
 
 .game-frame iframe{
   position:absolute;
+
   top:0;
   left:0;
+
   width:100%;
   height:100%;
+
   border:0;
 }
 
-/* =========================
+
+/* =====================================================
    EVALUACIÓN
-========================= */
+===================================================== */
 
 .evaluation{
   margin:30px auto 0;
+
   max-width:850px;
-  background:#f5f5f5;
+
+  background:var(--gris);
+
   border-radius:24px;
+
   padding:28px;
 }
 
 .evaluation h3{
   font-size:27px;
+
   margin-bottom:8px;
+
+  color:var(--azul);
 }
 
 .note{
   font-size:16px;
+
   margin-bottom:18px;
+
   font-weight:700;
 }
 
 .form-frame{
   width:100%;
+
   max-width:850px;
+
   margin:20px auto 0;
-  background:#fff;
+
+  background:var(--blanco);
+
   border-radius:20px;
+
   overflow:hidden;
 }
 
 .form-frame iframe{
   width:100%;
+
   height:900px;
+
   min-height:900px;
+
   border:0;
 }
 
-/* Separación entre juegos */
+
+/* =====================================================
+   SEPARACIÓN ENTRE JUEGOS
+===================================================== */
 
 .game-separator{
   height:35px;
 }
 
-/* =========================
+
+/* =====================================================
    FOOTER
-========================= */
+===================================================== */
 
 footer{
   text-align:center;
+
   padding:35px 20px;
+
   font-weight:900;
+
   font-size:17px;
+
+  color:var(--blanco);
 }
 
-/* =========================
+
+/* =====================================================
    RESPONSIVE
-========================= */
+===================================================== */
 
 @media(max-width:850px){
 
   header{
     grid-template-columns:1fr;
+
     min-height:auto;
+
     padding-top:45px;
   }
 
@@ -306,15 +505,18 @@ footer{
 
   .card{
     max-width:430px;
+
     margin:auto;
+
     width:100%;
   }
 
-  .game-frame{
-    padding-bottom:117.6%;
-  }
-
 }
+
+
+/* =====================================================
+   CELULARES
+===================================================== */
 
 @media(max-width:500px){
 
@@ -348,11 +550,13 @@ footer{
 
 <body>
 
+
 <div class="page">
 
-<!-- =========================
+
+<!-- =====================================================
      ENCABEZADO
-========================= -->
+===================================================== -->
 
 <header>
 
@@ -367,13 +571,19 @@ Muestra de proyectos de Tecnología e Informática
 </h2>
 
 <div class="teachers">
+
 Docentes:<br>
+
 Jairo Villamizar<br>
+
 Sebastian Pedroza
+
 </div>
 
 <p class="description">
+
 IEFA DIGITAL es una muestra de proyectos de Tecnología e Informática que reúne aplicaciones, juegos y creaciones digitales desarrolladas por nuestros estudiantes. 🚀 💻
+
 </p>
 
 </section>
@@ -391,11 +601,13 @@ alt="Logo Fe y Alegría">
 </header>
 
 
-<!-- =========================
+
+<!-- =====================================================
      PROYECTOS
-========================= -->
+===================================================== -->
 
 <main class="projects">
+
 
 <div class="section-title">
 IEFA
@@ -405,7 +617,9 @@ IEFA
 <section class="cards">
 
 
-<!-- SCRATCH -->
+<!-- =====================================================
+     SCRATCH
+===================================================== -->
 
 <article class="card scratch">
 
@@ -433,7 +647,10 @@ EXPLORAR
 </article>
 
 
-<!-- MAKECODE -->
+
+<!-- =====================================================
+     MAKECODE
+===================================================== -->
 
 <article class="card makecode">
 
@@ -450,18 +667,51 @@ MAKECODE
 GRADO 9
 </div>
 
-<button
-class="button"
-onclick="mostrarMakecode()">
 
-JUGAR
+<div class="game-menu">
+
+
+<div class="game-menu-title">
+
+VER JUEGOS
+
+<span>
+▼
+</span>
+
+</div>
+
+
+<div class="game-options">
+
+
+<button
+onclick="mostrarJuego('hunter-cat')">
+
+🐱 HUNTER CAT
 
 </button>
+
+
+<button
+onclick="mostrarJuego('caza-zanahorias')">
+
+🥕 CAZA ZANAHORIAS
+
+</button>
+
+
+</div>
+
+</div>
 
 </article>
 
 
-<!-- APP INVENTOR -->
+
+<!-- =====================================================
+     APP INVENTOR
+===================================================== -->
 
 <article class="card appinventor">
 
@@ -492,6 +742,7 @@ EXPLORAR
 </section>
 
 
+
 <!-- =====================================================
      HUNTER CAT
 ===================================================== -->
@@ -510,9 +761,8 @@ Juega directamente en esta página. Cuando termines, baja a la sección de evalu
 </p>
 
 
-<!-- JUEGO -->
-
 <div class="game-frame">
+
 
 <iframe
 src="https://arcade.makecode.com/---run?id=_JdDE5AK4rW3b&fullscreen=1&autofocus=1"
@@ -520,25 +770,31 @@ allowfullscreen="allowfullscreen"
 sandbox="allow-popups allow-forms allow-scripts allow-same-origin"
 frameborder="0"
 title="Hunter Cat">
+
 </iframe>
+
 
 </div>
 
 
-<!-- EVALUACIÓN -->
 
 <div class="evaluation">
+
 
 <h3>
 ⭐ Evalúa HUNTER CAT
 </h3>
 
+
 <p class="note">
+
 Después de jugar, responde la evaluación directamente aquí.
+
 </p>
 
 
 <div class="form-frame">
+
 
 <iframe
 src="https://docs.google.com/forms/d/e/1FAIpQLSdcYRBUKk5JpLI_CEoE6rh955nlxQjmMdZxofwmasn6kn_woQ/viewform?usp=pp_url&entry.366340186=9&entry.1373954358=HUNTER+CAT"
@@ -552,11 +808,15 @@ Cargando…
 
 </iframe>
 
-</div>
 
 </div>
+
+
+</div>
+
 
 </section>
+
 
 
 <!-- =====================================================
@@ -564,6 +824,7 @@ Cargando…
 ===================================================== -->
 
 <div class="game-separator"></div>
+
 
 
 <!-- =====================================================
@@ -579,14 +840,17 @@ class="demo">
 🥕 CAZA ZANAHORIAS — Grado 9
 </h2>
 
+
 <p>
+
 Juega directamente en esta página. Cuando termines, baja a la sección de evaluación.
+
 </p>
 
 
-<!-- JUEGO -->
 
 <div class="game-frame">
+
 
 <iframe
 src="https://arcade.makecode.com/---run?id=_E6Udaag21i7a&fullscreen=1&autofocus=1"
@@ -594,25 +858,31 @@ allowfullscreen="allowfullscreen"
 sandbox="allow-popups allow-forms allow-scripts allow-same-origin"
 frameborder="0"
 title="Caza Zanahorias">
+
 </iframe>
+
 
 </div>
 
 
-<!-- EVALUACIÓN -->
 
 <div class="evaluation">
+
 
 <h3>
 ⭐ Evalúa CAZA ZANAHORIAS
 </h3>
 
+
 <p class="note">
+
 Después de jugar, responde la evaluación directamente aquí.
+
 </p>
 
 
 <div class="form-frame">
+
 
 <iframe
 src="https://docs.google.com/forms/d/e/1FAIpQLSdcYRBUKk5JpLI_CEoE6rh955nlxQjmMdZxofwmasn6kn_woQ/viewform?usp=pp_url&entry.366340186=9&entry.1373954358=CAZA+ZANAHORIAS"
@@ -626,9 +896,12 @@ Cargando…
 
 </iframe>
 
-</div>
 
 </div>
+
+
+</div>
+
 
 </section>
 
@@ -636,9 +909,10 @@ Cargando…
 </main>
 
 
-<!-- =========================
+
+<!-- =====================================================
      PIE DE PÁGINA
-========================= -->
+===================================================== -->
 
 <footer>
 
@@ -650,28 +924,56 @@ IEFA DIGITAL · Tecnología e Informática · 2026
 </div>
 
 
-<!-- =========================
+
+<!-- =====================================================
      JAVASCRIPT
-========================= -->
+===================================================== -->
 
 <script>
 
-function mostrarMakecode(){
+function mostrarJuego(juego){
 
-  const hunter = document.getElementById("hunter-cat");
+  /*
+     Ocultar todos los juegos
+  */
 
-  const zanahorias = document.getElementById("caza-zanahorias");
+  document.querySelectorAll(".demo").forEach(function(seccion){
 
+    seccion.classList.remove("active");
 
-  hunter.classList.add("active");
-
-  zanahorias.classList.add("active");
-
-
-  hunter.scrollIntoView({
-    behavior:"smooth",
-    block:"start"
   });
+
+
+  /*
+     Buscar el juego seleccionado
+  */
+
+  const seleccionado =
+    document.getElementById(juego);
+
+
+  /*
+     Mostrar el juego
+  */
+
+  if(seleccionado){
+
+    seleccionado.classList.add("active");
+
+
+    /*
+       Desplazarse hasta el juego
+    */
+
+    seleccionado.scrollIntoView({
+
+      behavior:"smooth",
+
+      block:"start"
+
+    });
+
+  }
 
 }
 
