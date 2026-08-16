@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>IEFA DIGITAL | Tecnología e Informática</title>
+<title>IEFA DIGITAL | PIBBLE SIGMA PIPON</title>
 
 <style>
 
@@ -34,10 +34,6 @@
   padding:0;
 }
 
-html{
-  scroll-behavior:smooth;
-}
-
 body{
   font-family:"Trebuchet MS",Arial,sans-serif;
   background:var(--azul);
@@ -59,8 +55,8 @@ body{
 ===================================================== */
 
 header{
-  min-height:610px;
-  padding:55px 6% 45px;
+  min-height:380px;
+  padding:45px 6% 40px;
 
   display:grid;
   grid-template-columns:1.1fr .9fr;
@@ -78,7 +74,7 @@ header{
 
 .title{
   font-family:Impact,"Arial Black",sans-serif;
-  font-size:clamp(42px,6vw,72px);
+  font-size:clamp(36px,5vw,58px);
   letter-spacing:1px;
   margin-bottom:12px;
   color:var(--amarillo);
@@ -86,117 +82,13 @@ header{
 
 .subtitle{
   font-family:Impact,"Arial Black",sans-serif;
-  font-size:clamp(25px,3.4vw,43px);
+  font-size:clamp(22px,3vw,34px);
   line-height:1.05;
-  margin-bottom:42px;
+  margin-bottom:36px;
   color:var(--blanco);
 }
 
-.teachers{
-  font-size:25px;
-  line-height:1.2;
-  font-weight:900;
-  margin-bottom:45px;
-  color:var(--blanco);
-}
-
-.description{
-  font-size:25px;
-  line-height:1.12;
-  font-weight:900;
-  color:var(--blanco);
-}
-
-.logo-wrap{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-}
-
-.logo{
-  width:min(350px,90%);
-  filter:drop-shadow(0 8px 0 rgba(0,0,0,.15));
-}
-
-
-/* =====================================================
-   PROYECTOS
-===================================================== */
-
-.projects{
-  padding:65px 6% 90px;
-  border-bottom:3px solid var(--amarillo);
-}
-
-.section-title{
-  color:var(--amarillo);
-  font-family:Impact,"Arial Black",sans-serif;
-  font-size:clamp(40px,5vw,64px);
-  margin-bottom:40px;
-}
-
-.cards{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:22px;
-  align-items:start;
-}
-
-.card{
-  background:var(--blanco);
-  border-radius:30px;
-  padding:28px 22px 24px;
-  min-height:320px;
-  text-align:center;
-
-  box-shadow:0 8px 0 rgba(0,0,0,.18);
-
-  transition:.2s;
-}
-
-.card:hover{
-  transform:translateY(-6px);
-}
-
-.card-icon{
-  height:120px;
-
-  display:flex;
-  justify-content:center;
-  align-items:center;
-
-  font-size:78px;
-
-  margin-bottom:10px;
-}
-
-.card h2{
-  font-family:"Arial Black",Arial,sans-serif;
-  font-size:30px;
-  line-height:1.05;
-}
-
-.scratch h2,
-.appinventor h2{
-  color:var(--azul-claro);
-}
-
-.makecode h2{
-  color:var(--morado);
-}
-
-.grade{
-  font-size:28px;
-  font-weight:900;
-  margin:10px 0 20px;
-}
-
-
-/* =====================================================
-   BOTONES
-===================================================== */
-
-.button{
+.back{
   display:inline-block;
 
   border:0;
@@ -215,8 +107,126 @@ header{
   text-decoration:none;
 }
 
-.button:hover{
+.back:hover{
   opacity:.85;
+}
+
+.logo-wrap{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.logo{
+  width:min(260px,85%);
+  filter:drop-shadow(0 8px 0 rgba(0,0,0,.15));
+}
+
+
+/* =====================================================
+   JUEGO
+===================================================== */
+
+.projects{
+  padding:60px 6% 80px;
+  border-bottom:3px solid var(--amarillo);
+}
+
+.game-frame{
+  width:100%;
+
+  max-width:850px;
+
+  margin:0 auto;
+
+  position:relative;
+
+  height:0;
+
+  padding-bottom:117.6%;
+
+  overflow:hidden;
+
+  border-radius:20px;
+
+  border:4px solid var(--morado);
+
+  background:#111;
+}
+
+.game-frame iframe{
+  position:absolute;
+
+  top:0;
+  left:0;
+
+  width:100%;
+  height:100%;
+
+  border:0;
+}
+
+.game-frame.scratch-frame{
+  padding-bottom:82.9%;
+
+  border-color:var(--azul-claro);
+}
+
+
+/* =====================================================
+   EVALUACIÓN
+===================================================== */
+
+.evaluation{
+  margin:30px auto 0;
+
+  max-width:850px;
+
+  background:var(--gris);
+
+  border-radius:24px;
+
+  padding:28px;
+}
+
+.evaluation h3{
+  font-size:27px;
+
+  margin-bottom:8px;
+
+  color:var(--azul);
+}
+
+.note{
+  font-size:16px;
+
+  margin-bottom:18px;
+
+  font-weight:700;
+}
+
+.form-frame{
+  width:100%;
+
+  max-width:850px;
+
+  margin:20px auto 0;
+
+  background:var(--blanco);
+
+  border-radius:20px;
+
+  overflow:hidden;
+}
+
+.form-frame iframe{
+  width:100%;
+
+  height:900px;
+
+  min-height:900px;
+
+  border:0;
 }
 
 
@@ -248,41 +258,19 @@ footer{
 
     min-height:auto;
 
-    padding-top:45px;
-  }
-
-  .cards{
-    grid-template-columns:1fr;
-  }
-
-  .card{
-    max-width:430px;
-
-    margin:auto;
-
-    width:100%;
+    padding-top:40px;
   }
 
 }
 
-
-/* =====================================================
-   CELULARES
-===================================================== */
-
 @media(max-width:500px){
 
   .title{
-    font-size:45px;
+    font-size:40px;
   }
 
   .subtitle{
-    font-size:28px;
-  }
-
-  .teachers,
-  .description{
-    font-size:20px;
+    font-size:26px;
   }
 
   .projects{
@@ -311,28 +299,20 @@ footer{
 <section class="intro">
 
 <h1 class="title">
-IEFA DIGITAL
+PIBBLE SIGMA PIPON
 </h1>
 
 <h2 class="subtitle">
-Muestra de proyectos de Tecnología e Informática
+Grado 8 · Scratch
 </h2>
 
-<div class="teachers">
+<a
+class="back"
+href="scratch.html">
 
-Docentes:<br>
+← VOLVER A JUEGOS SCRATCH
 
-Jairo Villamizar<br>
-
-Sebastian Pedroza
-
-</div>
-
-<p class="description">
-
-IEFA DIGITAL es una muestra de proyectos de Tecnología e Informática que reúne aplicaciones, juegos y creaciones digitales desarrolladas por nuestros estudiantes. 🚀 💻
-
-</p>
+</a>
 
 </section>
 
@@ -351,117 +331,57 @@ alt="Logo Fe y Alegría">
 
 
 <!-- =====================================================
-     PROYECTOS
+     JUEGO Y EVALUACIÓN
 ===================================================== -->
 
 <main class="projects">
 
 
-<div class="section-title">
-IEFA
+<div class="game-frame scratch-frame">
+
+<iframe
+src="https://scratch.mit.edu/projects/1369075711/embed"
+allowfullscreen="allowfullscreen"
+sandbox="allow-popups allow-forms allow-scripts allow-same-origin"
+frameborder="0"
+title="Pibble Sigma Pipon">
+
+</iframe>
+
 </div>
 
 
-<section class="cards">
 
+<div class="evaluation">
 
-<!-- =====================================================
-     SCRATCH
-===================================================== -->
+<h3>
+⭐ Evalúa PIBBLE SIGMA PIPON
+</h3>
 
-<article class="card scratch">
+<p class="note">
 
-<div class="card-icon">
-🐱
-</div>
+Después de jugar, responde la evaluación directamente aquí.
 
-<h2>
-JUEGOS<br>
-SCRATCH
-</h2>
+</p>
 
-<div class="grade">
-GRADO 8
 </div>
 
 
-<a
-class="button"
-href="scratch.html">
+<div class="form-frame">
 
-VER JUEGOS
+<iframe
+src="https://docs.google.com/forms/d/e/1FAIpQLSdcYRBUKk5JpLI_CEoE6rh955nlxQjmMdZxofwmasn6kn_woQ/viewform?usp=pp_url&entry.366340186=8&entry.1373954358=PIBBLE+SIGMA+PIPON"
+width="100%"
+height="900"
+frameborder="0"
+marginheight="0"
+marginwidth="0">
 
-</a>
+Cargando…
 
-</article>
+</iframe>
 
-
-
-<!-- =====================================================
-     MAKECODE
-===================================================== -->
-
-<article class="card makecode">
-
-<div class="card-icon">
-🕹️
 </div>
-
-<h2>
-JUEGOS<br>
-MAKECODE
-</h2>
-
-<div class="grade">
-GRADO 9
-</div>
-
-
-<a
-class="button"
-href="makecode.html">
-
-VER JUEGOS
-
-</a>
-
-</article>
-
-
-
-<!-- =====================================================
-     APP INVENTOR
-===================================================== -->
-
-<article class="card appinventor">
-
-<div class="card-icon">
-📱
-</div>
-
-<h2>
-APP<br>
-INVENTOR
-</h2>
-
-<div class="grade">
-GRADO 11
-</div>
-
-
-<a
-class="button"
-href="appinventor.html">
-
-DESCARGAR APPS
-
-</a>
-
-</article>
-
-
-</section>
-
 
 
 </main>

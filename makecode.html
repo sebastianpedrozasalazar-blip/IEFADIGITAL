@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>IEFA DIGITAL | Tecnología e Informática</title>
+<title>IEFA DIGITAL | Juegos MakeCode</title>
 
 <style>
 
@@ -34,10 +34,6 @@
   padding:0;
 }
 
-html{
-  scroll-behavior:smooth;
-}
-
 body{
   font-family:"Trebuchet MS",Arial,sans-serif;
   background:var(--azul);
@@ -59,7 +55,7 @@ body{
 ===================================================== */
 
 header{
-  min-height:610px;
+  min-height:430px;
   padding:55px 6% 45px;
 
   display:grid;
@@ -92,19 +88,27 @@ header{
   color:var(--blanco);
 }
 
-.teachers{
-  font-size:25px;
-  line-height:1.2;
+.back{
+  display:inline-block;
+
+  border:0;
+  border-radius:999px;
+
+  padding:13px 24px;
+
   font-weight:900;
-  margin-bottom:45px;
+  font-size:17px;
+
+  cursor:pointer;
+
+  background:var(--negro);
   color:var(--blanco);
+
+  text-decoration:none;
 }
 
-.description{
-  font-size:25px;
-  line-height:1.12;
-  font-weight:900;
-  color:var(--blanco);
+.back:hover{
+  opacity:.85;
 }
 
 .logo-wrap{
@@ -114,13 +118,13 @@ header{
 }
 
 .logo{
-  width:min(350px,90%);
+  width:min(300px,85%);
   filter:drop-shadow(0 8px 0 rgba(0,0,0,.15));
 }
 
 
 /* =====================================================
-   PROYECTOS
+   JUEGOS
 ===================================================== */
 
 .projects{
@@ -132,7 +136,17 @@ header{
   color:var(--amarillo);
   font-family:Impact,"Arial Black",sans-serif;
   font-size:clamp(40px,5vw,64px);
-  margin-bottom:40px;
+  margin-bottom:20px;
+}
+
+.note{
+  color:var(--blanco);
+  font-weight:900;
+  font-size:19px;
+  line-height:1.3;
+  max-width:760px;
+  margin:0 auto 45px;
+  text-align:center;
 }
 
 .cards{
@@ -146,8 +160,14 @@ header{
   background:var(--blanco);
   border-radius:30px;
   padding:28px 22px 24px;
-  min-height:320px;
+  min-height:340px;
   text-align:center;
+
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
 
   box-shadow:0 8px 0 rgba(0,0,0,.18);
 
@@ -159,42 +179,34 @@ header{
 }
 
 .card-icon{
-  height:120px;
+  height:110px;
 
   display:flex;
   justify-content:center;
   align-items:center;
 
-  font-size:78px;
+  font-size:74px;
 
-  margin-bottom:10px;
+  margin-bottom:6px;
 }
 
 .card h2{
   font-family:"Arial Black",Arial,sans-serif;
-  font-size:30px;
+  font-size:28px;
   line-height:1.05;
-}
-
-.scratch h2,
-.appinventor h2{
-  color:var(--azul-claro);
-}
-
-.makecode h2{
   color:var(--morado);
 }
 
-.grade{
-  font-size:28px;
-  font-weight:900;
-  margin:10px 0 20px;
+.app-desc{
+  font-size:17px;
+  font-weight:700;
+  line-height:1.35;
+  color:#777;
+  font-style:italic;
+  flex:1;
+  display:flex;
+  align-items:center;
 }
-
-
-/* =====================================================
-   BOTONES
-===================================================== */
 
 .button{
   display:inline-block;
@@ -217,6 +229,10 @@ header{
 
 .button:hover{
   opacity:.85;
+}
+
+.play{
+  background:var(--morado);
 }
 
 
@@ -265,11 +281,6 @@ footer{
 
 }
 
-
-/* =====================================================
-   CELULARES
-===================================================== */
-
 @media(max-width:500px){
 
   .title{
@@ -280,9 +291,8 @@ footer{
     font-size:28px;
   }
 
-  .teachers,
-  .description{
-    font-size:20px;
+  .note{
+    font-size:17px;
   }
 
   .projects{
@@ -311,28 +321,20 @@ footer{
 <section class="intro">
 
 <h1 class="title">
-IEFA DIGITAL
+JUEGOS MAKECODE
 </h1>
 
 <h2 class="subtitle">
-Muestra de proyectos de Tecnología e Informática
+Grado 9 · Elige un juego y juega
 </h2>
 
-<div class="teachers">
+<a
+class="back"
+href="index.html">
 
-Docentes:<br>
+← VOLVER A IEFA DIGITAL
 
-Jairo Villamizar<br>
-
-Sebastian Pedroza
-
-</div>
-
-<p class="description">
-
-IEFA DIGITAL es una muestra de proyectos de Tecnología e Informática que reúne aplicaciones, juegos y creaciones digitales desarrolladas por nuestros estudiantes. 🚀 💻
-
-</p>
+</a>
 
 </section>
 
@@ -351,45 +353,48 @@ alt="Logo Fe y Alegría">
 
 
 <!-- =====================================================
-     PROYECTOS
+     JUEGOS
 ===================================================== -->
 
 <main class="projects">
 
-
 <div class="section-title">
-IEFA
+MAKECODE
 </div>
 
+<p class="note">
 
-<section class="cards">
+Elige uno de los juegos de MakeCode hechos por los estudiantes de Grado 9.
+
+</p>
+
+
+<div class="cards">
 
 
 <!-- =====================================================
-     SCRATCH
+     HUNTER CAT
 ===================================================== -->
 
-<article class="card scratch">
+<article class="card">
 
 <div class="card-icon">
 🐱
 </div>
 
 <h2>
-JUEGOS<br>
-SCRATCH
+HUNTER CAT
 </h2>
 
-<div class="grade">
-GRADO 8
-</div>
-
+<p class="app-desc">
+Escribe aquí de qué trata este juego, cómo se juega y qué objetivo tiene.
+</p>
 
 <a
-class="button"
-href="scratch.html">
+class="button play"
+href="juego-hunter-cat.html">
 
-VER JUEGOS
+▶ JUGAR
 
 </a>
 
@@ -398,30 +403,28 @@ VER JUEGOS
 
 
 <!-- =====================================================
-     MAKECODE
+     CAZA ZANAHORIAS
 ===================================================== -->
 
-<article class="card makecode">
+<article class="card">
 
 <div class="card-icon">
-🕹️
+🥕
 </div>
 
 <h2>
-JUEGOS<br>
-MAKECODE
+CAZA ZANAHORIAS
 </h2>
 
-<div class="grade">
-GRADO 9
-</div>
-
+<p class="app-desc">
+Escribe aquí de qué trata este juego, cómo se juega y qué objetivo tiene.
+</p>
 
 <a
-class="button"
-href="makecode.html">
+class="button play"
+href="juego-caza-zanahorias.html">
 
-VER JUEGOS
+▶ JUGAR
 
 </a>
 
@@ -430,38 +433,35 @@ VER JUEGOS
 
 
 <!-- =====================================================
-     APP INVENTOR
+     CINAMONROLL REPARTE CARTAS
 ===================================================== -->
 
-<article class="card appinventor">
+<article class="card">
 
 <div class="card-icon">
-📱
+🐰
 </div>
 
 <h2>
-APP<br>
-INVENTOR
+CINAMONROLL REPARTE CARTAS
 </h2>
 
-<div class="grade">
-GRADO 11
-</div>
-
+<p class="app-desc">
+Escribe aquí de qué trata este juego, cómo se juega y qué objetivo tiene.
+</p>
 
 <a
-class="button"
-href="appinventor.html">
+class="button play"
+href="juego-cinamonroll-cartas.html">
 
-DESCARGAR APPS
+▶ JUGAR
 
 </a>
 
 </article>
 
 
-</section>
-
+</div>
 
 
 </main>
