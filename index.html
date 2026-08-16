@@ -297,7 +297,8 @@ header{
 
 /* Botones de cada juego */
 
-.game-options button{
+.game-options button,
+.game-options a{
   width:100%;
 
   border:0;
@@ -316,10 +317,15 @@ header{
 
   text-align:left;
 
+  text-decoration:none;
+
+  color:var(--negro);
+
   transition:.2s;
 }
 
-.game-options button:hover{
+.game-options button:hover,
+.game-options a:hover{
   background:var(--amarillo);
 }
 
@@ -797,13 +803,14 @@ INVENTOR
 GRADO 11
 </div>
 
-<button
+
+<a
 class="button"
-onclick="alert('Aquí agregaremos las aplicaciones de App Inventor y sus APK.')">
+href="appinventor.html">
 
-EXPLORAR
+DESCARGAR APPS
 
-</button>
+</a>
 
 </article>
 
